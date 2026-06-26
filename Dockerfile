@@ -10,11 +10,16 @@ RUN npm run build
 
 FROM nginx:1.27-alpine
 
-COPY deploy/nginx.conf /etc/nginx/conf.d/default.conf
+ENV PORT=8080
+
+COPY deploy/nginx.conf.template /etc/nginx/templates/default.conf.template
+COPY deploy/docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
+
 COPY --from=build /app/dist /usr/share/nginx/html
 
-EXPOSE 80
+EXPOSE 8080
 
-HEALTHCHECK CMD wget -qO- http://127.0.0.1/ > /dev/null || exit 1
+HEALTHCHECK CMD wget -qO- http://127.0.0.1:8080/ > /dev/null || exit 1
 
-CMD ["nginx", "-g", "daemon off;"]
+ENTRYPOINT ["/docker-entrypoint.sh"]

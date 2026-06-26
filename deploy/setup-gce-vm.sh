@@ -31,7 +31,8 @@ docker rm -f "${CONTAINER_NAME}" 2>/dev/null || true
 docker run -d \
   --name "${CONTAINER_NAME}" \
   --restart unless-stopped \
-  -p 80:80 \
+  -p 80:8080 \
+  -e PORT=8080 \
   "${APP_NAME}:latest"
 
 echo "Done. App should be available on port 80."
