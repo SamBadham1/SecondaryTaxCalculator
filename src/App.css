@@ -1,0 +1,264 @@
+:root {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #1a2332;
+  background: #f4f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+.app-header {
+  margin-bottom: 2rem;
+}
+
+.app-header h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+  color: #0f2744;
+}
+
+.app-header p {
+  margin: 0;
+  color: #4a5d73;
+  max-width: 42rem;
+}
+
+.app-main {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .app-main {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid #d8e2ef;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 2px rgba(15, 39, 68, 0.06);
+}
+
+.panel h2,
+.panel h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+  color: #0f2744;
+}
+
+.panel-highlight {
+  border-color: #b9d4f5;
+  background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+}
+
+.panel-muted {
+  background: #f8fafc;
+}
+
+.panel-warning {
+  border-color: #f0d58a;
+  background: #fffdf5;
+}
+
+.helper-text {
+  margin: 0 0 1rem;
+  color: #5a6b7d;
+  font-size: 0.95rem;
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.input-with-prefix {
+  display: flex;
+  align-items: stretch;
+}
+
+.input-prefix {
+  display: flex;
+  align-items: center;
+  padding: 0 0.75rem;
+  background: #eef3f9;
+  border: 1px solid #c9d7e6;
+  border-right: none;
+  border-radius: 8px 0 0 8px;
+  color: #4a5d73;
+}
+
+.input,
+.select {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #c9d7e6;
+  border-radius: 8px;
+  font: inherit;
+  background: #fff;
+}
+
+.input-with-prefix .input {
+  border-radius: 0 8px 8px 0;
+}
+
+.input:focus,
+.select:focus {
+  outline: 2px solid #4d8fd9;
+  outline-offset: 1px;
+}
+
+.input-error {
+  border-color: #d64545;
+}
+
+.upload-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-height: 120px;
+  padding: 1rem;
+  border: 2px dashed #b8cbe0;
+  border-radius: 10px;
+  background: #f8fbff;
+  cursor: pointer;
+  text-align: center;
+}
+
+.upload-zone:hover {
+  border-color: #4d8fd9;
+  background: #f1f7ff;
+}
+
+.upload-title {
+  font-weight: 600;
+  color: #0f2744;
+}
+
+.upload-file-name {
+  font-size: 0.9rem;
+  color: #4a5d73;
+}
+
+.mapper-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.error-text {
+  margin: 0.75rem 0 0;
+  color: #b42318;
+  font-size: 0.9rem;
+}
+
+.error-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #7a4b00;
+}
+
+.summary-grid {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0;
+}
+
+.summary-grid div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid #e4edf7;
+}
+
+.summary-grid dt {
+  margin: 0;
+  color: #5a6b7d;
+  font-weight: 500;
+}
+
+.summary-grid dd {
+  margin: 0;
+  font-weight: 600;
+  text-align: right;
+}
+
+.tax-year {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  color: #4a5d73;
+}
+
+.tax-code {
+  font-size: 1.1rem;
+  color: #0f5ea8;
+}
+
+.summary-total {
+  color: #0f2744;
+  font-size: 1.05rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.65rem 0.5rem;
+  border-bottom: 1px solid #e4edf7;
+  text-align: left;
+}
+
+.data-table th {
+  color: #4a5d73;
+  font-weight: 600;
+}
+
+.data-table td:nth-child(n + 3),
+.data-table th:nth-child(n + 3) {
+  text-align: right;
+}
+
+.app-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #d8e2ef;
+  color: #6b7c8f;
+  font-size: 0.85rem;
+}
